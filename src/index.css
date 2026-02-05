@@ -3,12 +3,33 @@
 @tailwind utilities;
 
 body {
+  margin: 0;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;               /* full height */
+  width: 100%;
+  
+  /* Background image */
   background-image: url('./assets/images/love.jpg');
-  background-size: cover;
+  background-size: cover;           /* cover entire screen */
+  background-position: center;      /* center the image */
+  background-repeat: no-repeat;     /* no tiling */
+  
+  /* Optional: slight overlay for better glass contrast */
+  position: relative;
+  z-index: 0;
 }
+
+body::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.25);   /* semi-transparent overlay */
+  z-index: 1;
+}
+
 
 
 .animate-float {
